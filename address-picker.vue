@@ -1,3 +1,7 @@
+/*
+*alanchenchen pulish
+* 739709491@qq.com
+*/
 <template>
 	<div class="address-picker">
 		<transition name="fade">
@@ -86,7 +90,7 @@ export default{
 			this.cIndex = 0;
 			this.$emit('cancel');
 		},
-		set(name,index){//接收自定义指令中的值来改变data数据
+		set(name,index){
 			if(name == 'province'){
 				this.pIndex = index;
 			}else if(name == 'city'){
@@ -113,17 +117,15 @@ export default{
 			bind(el,binding){
 				let startY = '',
 					differY = '';
-				let currentY = 0;//初始化当前的位移值
-				let len = el.children[0].children.length;//初始化数据长度为当前dom的子元素数量
-				let dom = el.children[0];//位移的应该是绑定元素的直接子元素
-				let index = 0;//初始化当前位移在数组中的索引
-				let maxY = -(len-1);//设置最大的上移量
+				let currentY = 0;
+				let len = el.children[0].children.length;
+				let dom = el.children[0];
+				let index = 0;
+				let maxY = -(len-1);
 				let r = document.body.getBoundingClientRect().width/7.5;
 				el.addEventListener('touchstart',(e)=>{
 					e.preventDefault();
-					//因为inserted方法无法实时更新数据，只能监测dom Y轴位移为0时重置数据
 					if(dom.style.transform == 'translateY(0px)'){
-//						console.log('我现在需要重置一些数据');
 						currentY = 0;
 						maxY = -(el.children[0].children.length-1);
 					}
@@ -134,7 +136,6 @@ export default{
 					e.preventDefault();
 					let ev = e.touches[0];
 					differY = ev.clientY - startY;
-					//手指移动过程中滑动时间为0
 					dom.style.transition = 'transform 0s';			
 					dom.style.transform = `translateY(${currentY*r+differY}px)`;
 				});
@@ -142,7 +143,6 @@ export default{
 					e.preventDefault();
 					let ev = e.changedTouches[0];
 					differY = ev.clientY - startY;
-					//手指抬起时滑动动画开始
 					dom.style.transition = 'transform .3s';
 					if(differY <= -r/2){
 						currentY += Math.floor(differY/r);
@@ -161,7 +161,6 @@ export default{
 					}else if(binding.modifiers.town){
 						var name = 'town';
 					}
-					//给指令传值，调用methods方法
 					binding.value.set(name,index);
 				});
 			}
