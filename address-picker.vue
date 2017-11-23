@@ -1,6 +1,6 @@
 /*
-*alanchenchen pulish
-* 739709491@qq.com
+*author :Alan Chen
+*e-mail: 739709491@qq.com
 */
 <template>
 	<div class="address-picker">
