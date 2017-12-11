@@ -122,7 +122,7 @@ export default{
 				let dom = el.children[0];
 				let index = 0;
 				let maxY = -(len-1);
-				let r = document.body.getBoundingClientRect().width/7.5;
+				let r = Number.parseFloat(document.documentElement.style.fontSize);
 				el.addEventListener('touchstart',(e)=>{
 					e.preventDefault();
 					if(dom.style.transform == 'translateY(0px)'){
@@ -215,7 +215,7 @@ export default{
 	justify-content: space-around;
 	padding: 0 .3rem;
 	height: .8rem;
-	font-size: .35rem;
+	font-size: .3rem;
 	color: #2395ff;
 	background: #efefef;
 }
@@ -254,11 +254,12 @@ export default{
 	flex-grow: 3;
 	height: 1rem;
 	line-height: 1rem;
-	font-size: .36rem;
+	font-size: .3rem;
 	color:#707274;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
 }
 .line{
 	position: absolute;
