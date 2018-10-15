@@ -1,0 +1,60 @@
+{
+  "name": "cascading-picker",
+  "version": "0.2.2",
+  "description": "CascadingPicker for Vue 2",
+  "main": "dist/CascadingPicker.js",
+  "scripts": {
+    "config": "node config/index.js",
+    "build": "webpack --progress"
+  },
+  "keywords": [
+    "vue2",
+    "address-picker",
+    "address-picker-vue",
+    "CascadingPicker"
+  ],
+  "author": "Alan Chen",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alanchenchen/vue-address-picker"
+  },
+  "homepage": "https://github.com/alanchenchen/vue-address-picker",
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "chalk": "^2.4.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.4",
+    "inquirer": "^6.1.0",
+    "uglifyjs-webpack-plugin": "^1.0.1",
+    "vue-loader": "^13.0.5",
+    "vue-template-compiler": "^2.4.4",
+    "webpack": "^3.8.1"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "stage-3"
+    ],
+    "plugins": [
+      [
+        "transform-runtime",
+        {
+          "polyfill": false,
+          "regenerator": true,
+          "moduleName": "babel-runtime"
+        }
+      ]
+    ]
+  }
+}
