@@ -1,4 +1,9 @@
 # CascadingPicker
+
+![](https://img.shields.io/npm/v/cascading-picker.svg)
+![](https://img.shields.io/npm/dt/cascading-picker.svg)
+![](https://img.shields.io/github/license/alanchenchen/CascadingPicker.svg)
+
 > Description: 基于vue2的三级联动选择器，支持自定义数据，默认提供地址三级联动数据
 
 > Author: Alan Chen
